@@ -1,0 +1,42 @@
+{% extends "main_base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{STATIC_URL}}css/widget.css" />
+{% endblock extra_css %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{{STATIC_URL}}js/raphael/raphael-min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/raphael/g.raphael-min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/raphael/g.bar.custom.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/raphael/g.line-min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/raphael/g.pie-min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/date.format.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/widgets.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/charts.js"></script>
+{% endblock extra_js %}
+
+{% block main_content %}
+	{{block.super}}
+	
+	{% for widget in widgets %}
+	    {% if widget.type == "application" %}
+	        {% include "snippets/widget_application.html" %}
+	    {% endif %}
+	    {% if widget.type == "business" %}
+	        {% include "snippets/widget_business.html" %}
+	    {% endif %}
+	    {% if widget.type == "system" %}
+	        {% include "snippets/widget_system.html" %}
+	    {% endif %}
+	{% endfor %}
+	
+{% endblock %}
+
+{% block body_js %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            initializeAppVars();
+            initializeWidgets();
+        });
+    </script>
+{% endblock body_js %}

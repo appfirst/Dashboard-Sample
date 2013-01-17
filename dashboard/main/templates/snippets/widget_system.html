@@ -1,0 +1,46 @@
+<div id="widget_{{widget.id}}" class="widget system">
+    <div class="overlay"><div class="message">Loading...</div></div>
+    <ul>
+        <li>
+            <div>
+                <div class="title"></div>
+                <div class="icon-setting" data-id="{{widget.id}}"></div>
+            </div>
+        </li>
+
+        <li class="heatmap-chart-container">
+            <div class="value"></div>
+            <div id="widget_{{widget.id}}_metric" class="value-info"></div>
+            <div id="widget_{{widget.id}}_heatmap_chart" class="chart-container"></div>
+            <div id="widget_{{widget.id}}_servers" class="heat-info"></div>
+        </li>
+
+        <li class="donut-chart-container">
+            <div id="widget_{{widget.id}}_0_donut_chart" class="chart-container" title="" data-id="{{widget.id}}" data-metric="cpu" data-serverid="0"></div>
+            <div id="widget_{{widget.id}}_1_donut_chart" class="chart-container" title="" data-id="{{widget.id}}" data-metric="mem" data-serverid="0"></div>
+            <div id="widget_{{widget.id}}_2_donut_chart" class="chart-container" title="" data-id="{{widget.id}}" data-metric="diskbusy_max" data-serverid="0"></div>
+            <div id="widget_{{widget.id}}_3_donut_chart" class="chart-container" title="" data-id="{{widget.id}}" data-metric="diskp" data-serverid="0"></div>
+            <div class="label">CPU</div>
+            <div class="label">MEMORY</div>
+            <div class="label">DISK BUSY</div>
+            <div class="label">DISK</div>
+        </li>
+        
+        <li class="complex-chart-container">
+            <div id="widget_{{widget.id}}_complex_chart" class="chart-container"></div>
+        </li>
+        
+        <li class="time-stamp-container">
+            <span class="label time-stamp"></span>
+        </li>
+        
+        <li id="widget_{{widget.id}}_complex_label" class="complex-chart-label"></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var jsonData = JSON.parse(JSON.stringify({% autoescape off %}{{widget}}{% endautoescape %}));     
+        $("#widget_{{widget.id}}").data("widget", jsonData);
+    });
+</script>

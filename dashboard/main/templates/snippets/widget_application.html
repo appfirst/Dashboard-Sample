@@ -1,0 +1,36 @@
+<div id="widget_{{widget.id}}" class="widget application">
+    <div class="overlay"><div class="message">Loading...</div></div>
+    <ul>
+        <li>
+            <div>
+                <div class="title"></div>
+                <div class="icon-setting" data-id="{{widget.id}}"></div>
+            </div>
+        </li>
+
+        <li class="bar-chart" style='clear:both;'>
+            <div class="value"></div>
+            <div id="widget_{{widget.id}}_chart" class="chart-container"></div>
+        </li>
+
+        <li class="meta-data">
+            <span class="label">Time Scale</span>
+            <span class="data time-scale"></span>
+        </li>
+        
+        <li class="meta-data">
+            <span class="label info"></span>
+        </li>
+        
+        <li class="meta-data">
+            <span class="label time-stamp"></span>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var jsonData = JSON.parse(JSON.stringify({% autoescape off %}{{widget}}{% endautoescape %}));     
+        $("#widget_{{widget.id}}").data("widget", jsonData);
+    });
+</script>

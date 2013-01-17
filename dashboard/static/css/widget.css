@@ -1,0 +1,360 @@
+/* -------------------- 
+     SETTINGS DIALOG
+   -------------------- */
+.widget-settings-background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    z-index: 999;
+    display: none;
+}
+.widget-settings-initializing {
+    position:fixed;
+    width: 200px;
+    height: 50px;
+    top:50%;
+    left:50%;
+    margin-left: -100px;  
+    margin-top: -50px; 
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    color: #333;
+      
+    background: #fff;
+    padding: 7px;
+    z-index: 1000;
+    
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow:         0 0 5px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.widget-settings {
+    position:fixed;
+    width: 600px;
+    height: 300px;
+    top:50%;
+    left:50%;
+    margin-left: -300px;  
+    margin-top: -175px; 
+      
+    background: #fff;
+    padding: 7px;
+    z-index: 1000;
+    
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow:         0 0 5px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.widget-settings .header {
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+    color: #666;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+.widget-settings ul {
+    position: relative;
+    height: 225px;
+}
+.widget-settings li {
+    clear: both;
+    height: 25px;
+}
+.widget-settings li div {
+    float: left;
+    color: #666;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+}
+.widget-settings .label {
+    width: 130px;
+    text-align: right;
+    margin-right: 7px;
+}
+.widget-settings .data {
+    width: 450px;
+    text-align: left;
+}
+.widget-settings .data input[type=text] {
+    width: 350px;
+}
+.widget-settings .button-container {
+    clear: both;
+    position: relative;
+    height: 30px;
+    margin-top: 10px;
+}
+.widget-settings .button {
+    float: right;
+    margin-right: 7px;
+}
+
+/* -------------------- 
+     WIDGETS COMMON
+   -------------------- */
+.widget {
+    float: left;
+    position: relative;
+    margin: 10px 0 0 10px;
+    background: #fff;
+    border: 1px solid #fff;
+    
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow:         0 0 5px rgba(0, 0, 0, 0.5);
+    
+    height: 230px;
+}
+
+.widget .overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    display: block;
+    
+    opacity:0.7;
+    filter:alpha(opacity=70);
+}
+.widget .overlay .message {
+    margin-top: 100px;
+    height: 14px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+}
+
+.widget .title {
+    float: left;
+    width: 190px;
+    height: 15px;
+    font-family: "Myriad Pro", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight:600;
+    font-size: 15px;
+    line-height: 15px;
+    color: #666666;
+    margin: 5px 0 0 5px;
+    white-space:nowrap;
+    overflow: hidden;
+}
+
+.widget .icon-setting {
+    float:right;
+    width: 12px;
+    height: 12px;
+    margin: 5px 5px 0 0;
+    background-image: url(../images/settingsicon.png);
+    cursor: pointer;
+}
+
+/* --------------------------------- 
+     APPLICATION / BUSINESS WIDGET
+   --------------------------------- */
+.widget.application {
+   width: 230px;
+   background-color: #f8f8f8;
+}
+
+.widget.business {
+   width: 230px;
+   background-color: #fff;
+}
+   
+.widget .bar-chart .value {
+    font-family: "myriad-pro-condensed", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-shadow: 1px 1px rgba(200,200,200,0.75);
+    font-size: 50px;
+    color: #0cf;
+    display: block;
+    height: 70px;
+    line-height:70px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.widget .bar-chart .chart-container {
+    height:85px;
+    width:218px;
+    margin-left: 5px;
+    background-color: transparent;
+}
+
+.widget .meta-data {
+    clear: both;
+    font-size: 12px;
+    color: #999;
+    height: 14px;
+    line-height: 14px;
+    margin: 3px 5px 0 5px;
+}
+.widget .meta-data .label {
+    float: left;
+}
+.widget .label.info {
+    font-size: 11px;
+}
+.widget .label.time-stamp {
+    font-size: 10px;
+    color: #666;
+}
+.widget .meta-data .data {
+    float: right;
+}
+
+/* -------------------- 
+     SYSTEM WIDGET
+   -------------------- */
+.widget.system {
+   width: 472px;
+   background-color: #eee;
+}
+   
+.widget .heatmap-chart-container {
+    clear:both;
+    float: left;
+    width: 165px;
+    height: 188px;
+    margin: 5px 0 0 5px;
+    background-color: transparent;
+}
+.widget .heatmap-chart-container .value {
+    float: left;
+    width: 165px;
+    height: 50px;
+    font-family: "myriad-pro-condensed", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-shadow: 1px 1px rgba(200,200,200,0.75);
+    font-size: 50px;
+    color: #0cf;
+    display: block;
+    line-height:50px;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+.widget .heatmap-chart-container .chart-container {
+    float: left;
+    width: 130px;
+    height: 80px;
+    margin: 14px 0 0 20px;
+    background-color: transparent;
+}
+.widget .heatmap-chart-container .value-info {
+    float: left;
+    width: 160px;
+    font-size: 14px;
+    color: #999;
+    height: 14px;
+    line-height: 14px;
+    text-align: right;
+    padding: 3px 5px 0 0;
+}
+
+.widget .heatmap-chart-container .heat-info {
+    float: left;
+    width: 145px;
+    font-size: 10px;
+    color: #999;
+    height: 12px;
+    line-height: 12px;
+    text-align: right;
+    padding: 3px 20px 0 0;
+}
+
+.widget .donut-chart-container {
+    float: left;
+    width: 300px;
+    height: 93px;
+    margin: 0px 0 0 2px;
+}
+.widget .donut-chart-container .chart-container {
+    float: left;
+    width: 75px;
+    height: 75px;
+    margin: 0;
+    cursor: pointer;
+}
+.widget .donut-chart-container .label {
+    float: left;
+    width: 75px;
+    height: 15px;
+    color: #999;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+}
+.widget .complex-chart-container {
+    float: left;
+    width: 296px;
+    height: 93px;
+    margin: 2px 0 0 2px;
+    background-color: #efefef;
+}
+.widget .complex-chart-container .donut-container {
+    float: left;
+    width: 55px;
+    height: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.widget .complex-chart-container .donut-container.first{
+    margin-left: 15px;
+}
+.widget .complex-chart-container .donut-label {
+    float: left;
+    width: 55px;
+    height: 50px;
+    margin-top: 5px;
+    height: 15px;
+    color: #999;
+    font-size: 11px;
+    line-height: 15px;
+    text-align: center;
+}
+.widget .complex-chart-container .donut-label.first{
+    clear:both;
+    float: left;
+    margin-left: 15px;
+}
+
+.widget.system .time-stamp-container {
+    clear: both;
+    float: left;
+    width: 165px;
+    height: 12px;
+    margin-left: 5px;
+}
+.widget.system .complex-chart-label {
+    float: left;
+    width: 298px;
+    height: 12px;
+    font-size: 12px;
+    color: #999;
+    line-height: 12px;
+    text-align: center;
+}

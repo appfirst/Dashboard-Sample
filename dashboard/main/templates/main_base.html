@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>AppFirst - {% block title %}Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/reset.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/base.css" />
+    {% block extra_css %}{% endblock extra_css %}
+    
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/underscore-min.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/utils.js"></script>
+    <script type="text/javascript">        
+        $(document).ready(function() {
+
+        });
+    </script>
+    {% block extra_js %}{% endblock extra_js %}
+</head>
+<body>
+    {% include "snippets/widget_settings.html" %}
+	
+    <div class="wrapper">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="title">Dashboard Widget Samples</div>
+        </div>
+        
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            {% block main_content %}{% endblock main_content %}
+        </div>
+        
+        <div style="clear:both"></div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <img src="{{STATIC_URL}}images/poweredby.png" class="powered-by-logo" />
+        </div>
+    </div>
+    
+    {% block body_js %}{% endblock body_js %}
+</body>
+</html>

@@ -1,0 +1,195 @@
+<div class="widget-settings-background"></div>
+<div class="widget-settings-initializing">Initializing Dashboard</div>
+<div class="widget-settings">
+    <div class="header">SETTINGS</div>
+    
+    <ul>
+        <li>
+           <div class="label">Title</div>
+           <div class="data"><input type="text" value="" id="widget_settings_title"></div>
+        </li>
+        
+        <!-- APPLICATION SETTINGS -->
+        <li class="application-setting">
+           <div class="label">Application</div>
+           <div class="data"><select id="widget_settings_app_application"></select></div>
+        </li>
+        <li class="application-setting">
+           <div class="label">Metric</div>
+           <div class="data"><select id="widget_settings_app_metric"></select></div>
+        </li>
+        <li class="application-setting">
+           <div class="label">Tick</div>
+           <div class="data">
+                <select id="widget_settings_app_grain">
+                  <option value="1min">1 Minute</option>
+                  <option value="1hour">1 Hour</option>
+                </select>
+           </div>
+        </li>
+        <li class="application-setting">
+           <div class="label">Tick Aggregation</div>
+           <div class="data">
+               <select id="widget_settings_app_tick_agg">
+                 <option value="avg">Average</option>
+                 <option value="max">Maximum</option>
+                 <option value="min">Minimum</option>
+                 <option value="sum">Summary</option>
+               </select>
+           </div>
+        </li>
+        <li class="application-setting">
+            <div class="label">Datapoints</div>
+            <div class="data">
+                <select id="widget_settings_app_display_datapoints">
+                    {% for i in "12345679"|make_list %}
+                        <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                    {% for i in "12345"|make_list %}
+                        {% for j in "0123456789"|make_list %}
+                            <option value="{{i}}{{j}}">{{i}}{{j}}</option>
+                        {% endfor %}
+                    {% endfor %}
+                    <option value="60">60</option>
+                </select>
+            </div>
+        </li>
+        <li class="application-setting">
+            <div class="label">Number Format</div>
+            <div class="data">
+                <select id="widget_settings_app_number_format">
+                    <option value="number"> Number (9,999) </option>
+                    <option value="currency"> Currency ($) </option>
+                    <option value="percentage"> Percentage (%) </option>
+                    <option value="bytes"> Bytes (KB, MB) </option>
+                    <option value="microseconds"> Microseconds (us) </option>
+            	</select>
+        	</div>
+        </li>
+        
+        <!-- BUSINESS SETTINGS -->
+        <li class="business-setting">
+           <div class="label">Metric Type</div>
+           <div class="data">
+                <select id="widget_settings_biz_metric_type">
+                  <option value="counter">Counter</option>
+                  <option value="gauge">Gauge</option>
+                  <option value="timer">Timer</option>
+                </select>
+           </div>
+        </li>
+        <li class="business-setting">
+           <div class="label">Metric</div>
+           <div class="data"><select id="widget_settings_biz_metric"></select></div>
+        </li>
+        <li class="business-setting">
+           <div class="label">Tick</div>
+           <div class="data">
+                <select id="widget_settings_biz_grain">
+                  <option value="1min">1 Minute</option>
+                  <option value="5min">5 Minutes</option>
+                  <option value="10min">10 Minutes</option>
+                  <option value="15min">15 Minutes</option>
+                  <option value="20min">20 Minutes</option>
+                  <option value="25min">25 Minutes</option>
+                  <option value="30min">30 Minutes</option>
+                  <option value="35min">35 Minutes</option>
+                  <option value="40min">40 Minutes</option>
+                  <option value="45min">45 Minutes</option>
+                  <option value="50min">50 Minutes</option>
+                  <option value="55min">55 Minutes</option>
+                  <option value="1hour">1 Hour</option>
+                </select>
+           </div>
+        </li>
+        <li class="business-setting">
+           <div class="label">Tick Aggregation</div>
+           <div class="data">
+               <select id="widget_settings_biz_tick_agg">
+                 <option value="avg">Average</option>
+                 <option value="max">Maximum</option>
+                 <option value="min">Minimum</option>
+                 <option value="sum">Summary</option>
+               </select>
+           </div>
+        </li>
+        <li class="business-setting">
+           <div class="label">&nbsp;</div>
+           <div class="data"><input type="checkbox" id="widget_settings_biz_hwb" value="0"> Holts Winter</div>
+        </li>
+        <li class="business-setting">
+            <div class="label">Datapoints</div>
+            <div class="data">
+                <select id="widget_settings_biz_display_datapoints">
+                    {% for i in "12345679"|make_list %}
+                        <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                    {% for i in "12345"|make_list %}
+                        {% for j in "0123456789"|make_list %}
+                            <option value="{{i}}{{j}}">{{i}}{{j}}</option>
+                        {% endfor %}
+                    {% endfor %}
+                    <option value="60">60</option>
+                </select>
+            </div>
+        </li>
+        <li class="business-setting">
+            <div class="label">Number Format</div>
+            <div class="data">
+                <select id="widget_settings_biz_number_format">
+                    <option value="number"> Number (9,999) </option>
+                    <option value="currency"> Currency ($) </option>
+                    <option value="percentage"> Percentage (%) </option>
+                    <option value="bytes"> Bytes (KB, MB) </option>
+                    <option value="microseconds"> Microseconds (us) </option>
+            	</select>
+        	</div>
+        </li>
+        
+        <!-- SYSTEM SETTINGS -->
+        <li class="system-setting">
+           <div class="label">Server Tag</div>
+           <div class="data"><select id="widget_settings_sys_server_tag"></select></div>
+        </li>
+        <li class="system-setting">
+           <div class="label">Metric</div>
+           <div class="data">
+               <select id="widget_settings_sys_metric">
+                   <option value="cpu">CPU</option>
+           	       <option value="mem">Memory</option>
+           	       <option value="disk_busy">Disk Busy</option>
+           	       <option value="diskp">Disk</option>
+           	   </select>
+           </div>
+        </li>
+    </ul>
+    
+    <div class="button-container">
+        <div class="button save">Save</div>
+        <div class="button cancel">Cancel</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#widget_settings_biz_metric_type").change(function() {
+            bindBusinessMetricList(null);
+        });
+        $("#widget_settings_biz_metric").change(function() {
+            var dropDown = $(this);
+            $("#widget_settings_title").val(dropDown.context.selectedOptions[0].outerText);
+        });
+        $("#widget_settings_app_application").change(function() {
+            bindApplicationMetricList(null);
+        });
+        $("#widget_settings_app_metric").change(function() {
+            var application = $("#widget_settings_app_application").val();
+            var dropDown = $(this);
+            $("#widget_settings_title").val(application + " (" + dropDown.context.selectedOptions[0].outerText + ")");
+        });
+        $("#widget_settings_sys_server_tag").change(function() {
+            var dropDown = $(this);
+            $("#widget_settings_title").val(dropDown.context.selectedOptions[0].outerText);
+        });
+    });
+</script>
