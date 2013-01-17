@@ -11,5 +11,6 @@ First, set your AppFirst username (email address) and api key in the settings_lo
 
 Create a symbolic link settings.py to settings_local.py.
 
-To run, from the dashboard directory enter: python manage.py runserver.  Enter 127.0.0.1:8000 in your browser to view the dashboard.
+To run, from the dashboard directory enter "python manage.py runserver", then enter 127.0.0.1:8000 in your browser to view
+the dashboard.
 
